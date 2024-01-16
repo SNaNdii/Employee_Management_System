@@ -16,7 +16,7 @@ public class DepartmentController {
 	@Autowired
 	private DepartmentService deptSer;
 	
-	@PostMapping
+	@PostMapping("/departments")
 	public ResponseEntity<Department>addNewDepartmentHandler(@RequestBody Department d){
 		Department newDepartment = deptSer.addNewDepartment(d);
 		return new ResponseEntity<>(newDepartment, HttpStatus.CREATED);
